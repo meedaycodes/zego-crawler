@@ -1,0 +1,15 @@
+Public sites that allow crawlers, useful for trying domain-crawler
+against something other than the bundled demo site.
+
+1. http://books.toscrape.com/
+   A fictional online bookstore, ~1000 pages across 50 categories.
+   Large enough to give --concurrency a visible effect.
+
+2. http://quotes.toscrape.com/
+   A small quotes site (~10 pages) from the same project as above.
+   Good for a quick first run before pointing at something larger.
+
+3. https://www.scrapethissite.com/pages/
+   A small collection of standalone practice pages (countries, hockey
+   stats, paginated tables) explicitly billed as a "sandbox for
+   learning web scraping."

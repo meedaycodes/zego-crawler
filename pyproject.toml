@@ -1,0 +1,47 @@
+[project]
+name = "domain-crawler"
+version = "0.1.0"
+description = "A concurrent, single-domain web crawler with an async worker-pool architecture."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Habeeb Shomuyiwa", email = "habeebaramide@yahoo.com" }]
+license = { text = "MIT" }
+dependencies = [
+    "aiohttp>=3.10,<4",
+    "selectolax>=0.3.21,<0.4",
+]
+
+[project.scripts]
+domain-crawler = "crawler.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "crawler"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-asyncio>=0.24,<0.25",
+    "ruff>=0.7,<1",
+    "mypy>=1.13,<2",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
